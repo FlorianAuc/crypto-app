@@ -79,7 +79,9 @@ const Table = ({ coinsData }) => {
           })
           .filter((coin) => {
             if (showFavList) {
-              let list = window.localStorage.coinList.split(",");
+              let list = window.localStorage.coinList
+                ? window.localStorage.coinList.split(",")
+                : [];
               if (list.includes(coin.id)) {
                 return coin;
               }
